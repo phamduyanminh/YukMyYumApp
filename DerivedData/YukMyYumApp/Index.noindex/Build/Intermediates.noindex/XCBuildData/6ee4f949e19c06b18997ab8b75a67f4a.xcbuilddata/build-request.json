@@ -1,0 +1,58 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "a7d09a127cec2de415c72f888ea15c6b0caca532b68771c30f760fe4e630559b"
+    }
+  ],
+  "containerPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/YukMyYumApp.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator17.0",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/PrecompiledHeaders",
+      "indexRegularBuildIntermediatesPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/Build/Intermediates.noindex",
+      "indexRegularBuildProductsPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/Build/Products",
+      "pchPath" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

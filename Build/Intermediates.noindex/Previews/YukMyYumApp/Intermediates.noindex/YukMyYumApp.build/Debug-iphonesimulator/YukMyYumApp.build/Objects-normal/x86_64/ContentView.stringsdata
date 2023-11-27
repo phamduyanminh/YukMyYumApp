@@ -1,0 +1,20 @@
+{
+  "source": "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/YukMyYumApp/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Select an item"
+      },
+      {
+        "comment": "",
+        "key": "Item at %@"
+      },
+      {
+        "comment": "",
+        "key": "Add Item"
+      }
+    ]
+  },
+  "version": 1
+}

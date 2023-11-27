@@ -1,0 +1,30 @@
+{
+  "" : {
+    "dependencies" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/Objects-normal/arm64/YukMyYumApp-master.d",
+    "diagnostics" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/Objects-normal/arm64/YukMyYumApp-master.dia",
+    "emit-module-dependencies" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/Objects-normal/arm64/YukMyYumApp-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/Objects-normal/arm64/YukMyYumApp-master-emit-module.dia",
+    "swift-dependencies" : "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/Objects-normal/arm64/YukMyYumApp-master.swiftdeps"
+  },
+  "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/DerivedSources/CoreDataGenerated/YukMyYumApp/Item+CoreDataClass.swift" : {
+
+  },
+  "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/DerivedSources/CoreDataGenerated/YukMyYumApp/Item+CoreDataProperties.swift" : {
+
+  },
+  "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/DerivedSources/CoreDataGenerated/YukMyYumApp/YukMyYumApp+CoreDataModel.swift" : {
+
+  },
+  "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/DerivedData/YukMyYumApp/Index.noindex/Build/Intermediates.noindex/YukMyYumApp.build/Debug-iphoneos/YukMyYumApp.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+
+  },
+  "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/YukMyYumApp/ContentView.swift" : {
+
+  },
+  "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/YukMyYumApp/Persistence.swift" : {
+
+  },
+  "/Users/minhpham/Documents/Sheridan/Semester 6/Advanced Mobile Developement/YukMyYumProject/YukMyYumApp/YukMyYumApp/YukMyYumAppApp.swift" : {
+
+  }
+}
