@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 @main
 struct YukMyYumAppApp: App {
     let persistenceController = PersistenceController.shared
+    
+    init() {
+        FirebaseApp.configure()
+    }
 
     var body: some Scene {
         WindowGroup {
