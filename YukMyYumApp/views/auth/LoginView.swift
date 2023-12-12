@@ -16,6 +16,8 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     
+    @State private var showAlert = false
+    
     var body: some View {
         
         NavigationStack{
@@ -42,6 +44,11 @@ struct LoginView: View {
                     
                     Task{
                         try await viewModel.signIn(withEmail: email, password: password)
+                        if viewModel.isUserSignInSuccessful {
+                            
+                        } else {
+                            self.showAlert = true
+                        }
                     }
                 }label:{
                     HStack{
@@ -55,6 +62,18 @@ struct LoginView: View {
                 .background(Color(.systemBlue))
                 .cornerRadius(10)
                 .padding(.top, 24)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Sign-In Failed"),
+                        message: Text("Invalid email or password. Please try again."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
+                
+                NavigationLink(destination: ProfileView(), isActive: $viewModel.isUserSignInSuccessful) {
+                    EmptyView()
+                }
+                .hidden()
                 
                 //Spacer
                 Spacer()

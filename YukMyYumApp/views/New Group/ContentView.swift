@@ -13,18 +13,17 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        
-        Group{
+        LoginView()
+//        Group{
 //            if viewModel.userSession != nil{
 //                ProfileView()
 //            }else{
 //                LoginView()
 //            }
-            LoginView()
-        }//Group
-        .onAppear(){
-            //viewModel.initUserSession()
-        }
+//        }//Group
+//        .onAppear(){
+//            viewModel.initUserSession()
+//        }
         
     }//body
 

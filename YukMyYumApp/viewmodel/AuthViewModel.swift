@@ -14,6 +14,8 @@ class AuthViewModel: ObservableObject{
     
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+    @Published var isUserSignInSuccessful: Bool = false
+    @Published var isUserRegisterAccountSuccessful: Bool = false
     
     init(){
         print(#function, "getting auth user")
@@ -26,7 +28,16 @@ class AuthViewModel: ObservableObject{
     
     //Sign-in
     func signIn(withEmail email: String, password: String) async throws{
-        print(#function, "Signed user in")
+        print(#function, "Logging user in")
+        do{
+            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            self.userSession = result.user
+            self.isUserSignInSuccessful = true
+            await fetchUser()
+            print(#function, "Signed in")
+        }catch{
+            print(#function, "Failed to sign user in with error: \(error.localizedDescription)")
+        }
     }
     
     //Create user
@@ -39,6 +50,7 @@ class AuthViewModel: ObservableObject{
             let user = User(id: result.user.uid, fullname: fullname, email: email)
             let encodedUser = try Firestore.Encoder().encode(user) 
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
+            self.isUserRegisterAccountSuccessful = true
             await fetchUser()
         }catch{
             print(#function, "Failed to created user with error: \(error.localizedDescription)")
