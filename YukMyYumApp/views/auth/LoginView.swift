@@ -70,7 +70,7 @@ struct LoginView: View {
                     )
                 }
                 
-                NavigationLink(destination: ProfileView(), isActive: $viewModel.isUserSignInSuccessful) {
+                NavigationLink(destination: HomeView(), isActive: $viewModel.isUserSignInSuccessful) {
                     EmptyView()
                 }
                 .hidden()
