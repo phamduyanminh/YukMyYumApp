@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack(spacing: 20) {
-                    NavigationLink(destination: ProfileView()) {
-                        Text("Go to First View")
+                    NavigationLink(destination: MapView()) {
+                        Text("Let's explore!")
                             .padding()
                             .foregroundColor(.white)
                             .background(Color.blue)
@@ -19,7 +19,7 @@ struct HomeView: View {
                     }
 
                     NavigationLink(destination: ProfileView()) {
-                        Text("Go to Second View")
+                        Text("Profile")
                             .padding()
                             .foregroundColor(.white)
                             .background(Color.green)
