@@ -15,6 +15,7 @@ struct MapView: View {
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State private var isSearching: Bool = false
     @State private var mapItems: [MKMapItem] = []
+    @State private var visibleRegion: MKCoordinateRegion?
     
     var body: some View {
         ZStack {
@@ -35,6 +36,15 @@ struct MapView: View {
                             isSearching = true
                         }
                     
+                    SearchOptionsView{ searchTerm in
+                        query = searchTerm
+                        isSearching = true
+                    }
+                    
+                    List(mapItems, id: \.self){mapItem in
+                        PlaceView(mapItem: mapItem)
+                    }
+                    
                     Spacer()
                 }
                 .presentationDetents([.fraction(0.15), .medium, .large], selection: $selectedDetent)
@@ -43,6 +53,9 @@ struct MapView: View {
                 .presentationBackgroundInteraction(.enabled(upThrough: .medium))
             })//Map
         }//ZStack
+        .onMapCameraChange {context in
+            visibleRegion = context.region
+        }
         .task(id: isSearching, {
             if isSearching {
                 await search()
@@ -54,7 +67,7 @@ struct MapView: View {
     //Perfoms searching task
     private func search() async {
         do {
-            mapItems = try await performSearch(searchTerm: query, visibleRegion: locationManager.region)
+            mapItems = try await performSearch(searchTerm: query, visibleRegion: visibleRegion)
             print(mapItems)
             isSearching = false
         } catch {
