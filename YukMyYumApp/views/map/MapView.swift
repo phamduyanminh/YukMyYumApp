@@ -29,25 +29,11 @@ struct MapView: View {
             })
             .sheet(isPresented: .constant(true), content: {
                 VStack {
-                    TextField("Search", text: $query)
-                        .textFieldStyle(.roundedBorder)
-                        .padding()
-                        .onSubmit {
-                            isSearching = true
-                        }
-                    
-                    SearchOptionsView{ searchTerm in
-                        query = searchTerm
-                        isSearching = true
-                    }
-                    
-                    List(mapItems, id: \.self){mapItem in
-                        PlaceView(mapItem: mapItem)
-                    }
-                    
+                    SearchBarView(search: $query, isSearching: $isSearching)
+                    PlaceListView(mapItems: mapItems)
                     Spacer()
                 }
-                .presentationDetents([.fraction(0.15), .medium, .large], selection: $selectedDetent)
+                .presentationDetents([.fraction(0.15), .medium, .large])
                 .presentationDragIndicator(.visible)
                 .interactiveDismissDisabled()
                 .presentationBackgroundInteraction(.enabled(upThrough: .medium))
