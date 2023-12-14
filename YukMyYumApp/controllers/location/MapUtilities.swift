@@ -9,6 +9,12 @@ import Foundation
 import MapKit
 
 
+func calculateDistance(from: CLLocation, to: CLLocation) -> Measurement<UnitLength> {
+    let distanceInMeters = from.distance(from: to)
+    return Measurement(value: distanceInMeters, unit: .meters)
+}
+
+
 func performSearch(searchTerm: String, visibleRegion: MKCoordinateRegion?) async throws -> [MKMapItem] {
     
     let request = MKLocalSearch.Request()

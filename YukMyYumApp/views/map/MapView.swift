@@ -8,18 +8,32 @@
 import SwiftUI
 import MapKit
 
+
+enum DisplayMode{
+    case list
+    case detail
+}
+
 struct MapView: View {
-    @State private var query: String = ""
+    
+    @State private var query: String = "Burgers"
     @State private var selectedDetent: PresentationDetent = .fraction(0.15)
     @State private var locationManager = LocationManager.shared
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State private var isSearching: Bool = false
     @State private var mapItems: [MKMapItem] = []
     @State private var visibleRegion: MKCoordinateRegion?
+    @State private var selectedMapItem: MKMapItem?
+    @State private var displayMode: DisplayMode = .list
+    @State private var lookAroundScene: MKLookAroundScene?
     
     var body: some View {
         ZStack {
-            Map(position: $position) {
+            Map(position: $position, selection: $selectedMapItem) {
+                ForEach(mapItems, id: \.self) { mapItem in
+                    Marker(item: mapItem)
+                }
+                
                 UserAnnotation()
             }
             .onChange(of: locationManager.region, {
@@ -29,17 +43,40 @@ struct MapView: View {
             })
             .sheet(isPresented: .constant(true), content: {
                 VStack {
-                    SearchBarView(search: $query, isSearching: $isSearching)
-                    PlaceListView(mapItems: mapItems)
+                    
+                    switch displayMode {
+                    case .list:
+                        SearchBarView(search: $query, isSearching: $isSearching)
+                        PlaceListView(mapItems: mapItems, selectedMapItem: $selectedMapItem)
+                    case .detail:
+                        SelectedPlaceDetailView(mapItem: $selectedMapItem)
+                            .padding()
+                        LookAroundPreview(initialScene: lookAroundScene)
+                            .task(id: selectedMapItem){
+                                lookAroundScene = nil
+                                if let selectedMapItem{
+                                    let request = MKLookAroundSceneRequest(mapItem: selectedMapItem)
+                                    lookAroundScene = try? await request.scene
+                                }
+                            }
+                    }
+                    
                     Spacer()
                 }
                 .presentationDetents([.fraction(0.15), .medium, .large])
                 .presentationDragIndicator(.visible)
                 .interactiveDismissDisabled()
                 .presentationBackgroundInteraction(.enabled(upThrough: .medium))
-            })//Map
+            })
         }//ZStack
-        .onMapCameraChange {context in
+        .onChange(of: selectedMapItem, {
+            if selectedMapItem != nil{
+                displayMode = .detail
+            }else{
+                displayMode = .list
+            }
+        })
+        .onMapCameraChange { context in
             visibleRegion = context.region
         }
         .task(id: isSearching, {
@@ -54,7 +91,6 @@ struct MapView: View {
     private func search() async {
         do {
             mapItems = try await performSearch(searchTerm: query, visibleRegion: visibleRegion)
-            print(mapItems)
             isSearching = false
         } catch {
             mapItems = []

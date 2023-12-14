@@ -18,4 +18,5 @@ extension MKCoordinateRegion: Equatable {
             return false
         }
     }
+    
 }

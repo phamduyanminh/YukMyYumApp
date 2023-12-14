@@ -14,17 +14,17 @@ struct SearchBarView: View {
     
     var body: some View {
         
-        VStack{
+        VStack(spacing: -10) {
             TextField("Search", text: $search)
                 .textFieldStyle(.roundedBorder)
                 .padding()
                 .onSubmit {
                     isSearching = true
-                }//TextField
-            SearchOptionsView{ searchOption in
+                }
+            SearchOptionsView { searchOption in
                 search = searchOption
                 isSearching = true
-            }//SearchOptionView
+            }
             .padding([.leading], 10)
             .padding([.bottom], 20)
         }//VStack

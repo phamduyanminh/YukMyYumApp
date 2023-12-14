@@ -21,13 +21,14 @@ struct SearchOptionsView: View {
     
     var body: some View {
         
-        ScrollView(.horizontal, showsIndicators: false){
-            HStack{
-                ForEach(searchOptions.sorted(by: >), id: \.0){key, value in
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(searchOptions.sorted(by: >), id: \.0) { key, value in
                     Button(action: {
+                        // action
                         onSelected(key)
                     }, label: {
-                        HStack{
+                        HStack {
                             Image(systemName: value)
                             Text(key)
                         }
